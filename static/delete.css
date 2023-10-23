@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #161623;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    color: black;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: row;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.container::-webkit-scrollbar {
+    width: 0.5em;
+}
+
+.container::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: transparent;
+}
+
+.container:hover::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.container:hover::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Add this CSS rule to make the first row a different color */
+.container table tr:first-child {
+    background-color: crimson;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+table tr:nth-child(odd) {
+    background-color: white;
+}
+table tr:nth-child(even) {
+    background-color: silver;
+}
+
+.container table th, .container table td {
+    padding: 20px 50px;
+}

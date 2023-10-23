@@ -1,0 +1,14 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #161623;
+    font-family: 'Poppins', sans-serif;
+}
+
+form{
+    background-color: #fff;
+    height: 50vh;
+    width: 50vw;
+}

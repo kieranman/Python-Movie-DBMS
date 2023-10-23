@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='add.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST" action="/addMovie">
+        <label for="title">Title:</label>
+        <input type="text" name="title" id="title" required>
+        <br>
+        <label for="director">Release Year:</label>
+        <input type="text" name="yearReleased" id="yearReleased" required>
+        <br>
+        <label for="release_date">Rating:</label>
+        <input type="text" name="rating" id="rating" required>
+        <br>
+        <label for="release_date">Duration:</label>
+        <input type="text" name="duration" id="duration" required>
+        <br>
+        <label for="release_date">Genre:</label>
+        <input type="text" name="genre" id="genre" required>
+        <br>
+        <input type="submit" value="Add Movie">
+    </form>
+</body>
+</html>

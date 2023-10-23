@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='read.css') }}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Release Year</th>
+                <th>Rating</th>
+                <th>Duration</th>
+                <th>Genre</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+                <td>{{ row.id }}</td>
+                <td>{{ row.title }}</td>
+                <td>{{ row.yearReleased }}</td>
+                <td>{{ row.rating }}</td>
+                <td>{{ row.duration }}</td>
+                <td>{{ row.genre }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
