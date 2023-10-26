@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)
 
 def getConnection():
-    return sql.connect('python-projects/FilmFlix/filmflix.db')
+    return sql.connect(os.path.join(os.path.dirname(__file__), 'filmflix.db'))
 
 @app.route("/")
 def hello_world():
