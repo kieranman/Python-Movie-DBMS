@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='delete.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ammend.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -14,7 +14,8 @@
                 <h3>Back</h3>
             </div>
         </a>
-        </div>
+        </input>
+    </div>
     <div class="container">
         <table>
             <tr>
@@ -28,17 +29,13 @@
             </tr>
             {% for row in data %}
             <tr>
-                <td>{{ row.id }}</td>
-                <td>{{ row.title }}</td>
-                <td>{{ row.yearReleased }}</td>
-                <td>{{ row.rating }}</td>
-                <td>{{ row.duration }}</td>
-                <td>{{ row.genre }}</td>
-                <td>
-                    <form action="/deleteByMovieId/{{ row.id }}" method="POST">
-                        <button type="submit"><img src="{{ url_for('static', filename='delete-icon.png') }}" alt=""></button>
-                    </form>
-                </td>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.title }}</td>
+                    <td>{{ row.yearReleased }}</td>
+                    <td>{{ row.rating }}</td>
+                    <td>{{ row.duration }}</td>
+                    <td>{{ row.genre }}</td>
+                    <td><a href="/ammendMovieById/{{row.id}}"><img src="{{ url_for('static', filename='confirm-icon.png') }}" alt=""></a></td>
             </tr>
             {% endfor %}
         </table>

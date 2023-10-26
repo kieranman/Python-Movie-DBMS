@@ -20,6 +20,8 @@ body {
 		opacity: 1;
 	}
 }
+
+
 a{
     text-decoration: none;
     color: black;
@@ -72,16 +74,16 @@ a{
     transform: scale(0.8);
 }
 
-.search-box{
-    margin-bottom: 15px;
-}
-
-.search-box input, select{
-    padding:8px
+input{
+    padding: 2px;
+    width: 200px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .container {
-    max-height: 700px;
+    max-height: 700px; /* Set the height to 600px */
     color: black;
     display: flex;
     justify-content: center;
@@ -116,6 +118,7 @@ a{
 
 table{
     border-collapse: collapse;
+   
 }
 
 table tr:nth-child(odd) {
@@ -137,3 +140,4 @@ button{
 img{
     width: 20px;
 }
+

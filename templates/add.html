@@ -7,23 +7,50 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="/addMovie">
-        <label for="title">Title:</label>
+    <div class="hexagonArea first">
+        <a href="/">
+            <div class="hexagon">
+                <img src="{{ url_for('static', filename='exit-icon.png') }}" alt="">
+                <h3>Back</h3>
+            </div>
+        </a>
+            <div class="hexagon" id="confirm-button">
+                <img src="{{ url_for('static', filename='confirm-icon.png') }}" alt="">
+                <h3>Confirm</h3>
+            </div>
+        </input>
+    </div>
+    <form method="POST" action="/addMovie" id="movie-form">
+        <h3>Title</h3>
         <input type="text" name="title" id="title" required>
-        <br>
-        <label for="director">Release Year:</label>
+   
+        <h3>Release Year</h3>
         <input type="text" name="yearReleased" id="yearReleased" required>
-        <br>
-        <label for="release_date">Rating:</label>
-        <input type="text" name="rating" id="rating" required>
-        <br>
-        <label for="release_date">Duration:</label>
+
+        <h3>Rating</h3>
+        <select type="text" name="rating" id="rating" required> 
+            <option value="PG">PG</option>
+            <option value="PG-13">PG-13</option>
+            <option value="G">G</option>
+            <option value="R">R</option>
+            <option value="NC-17">NC-17</option>
+        </select>
+
+        <h3>Duration</h3>
         <input type="text" name="duration" id="duration" required>
-        <br>
-        <label for="release_date">Genre:</label>
+
+        <h3>Genre</h3>
         <input type="text" name="genre" id="genre" required>
-        <br>
-        <input type="submit" value="Add Movie">
     </form>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const confirmButton = document.getElementById("confirm-button");
+            const form = document.getElementById("movie-form")
+            confirmButton.addEventListener("click", function () {
+                form.submit();
+                });
+        });
+    </script>
 </body>
 </html>

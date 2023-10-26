@@ -1,14 +1,104 @@
-body{
+body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     min-height: 100vh;
     background: #161623;
     font-family: 'Poppins', sans-serif;
+
+    animation-name: fadeInOpacity;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
 }
 
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+/* .message-container{background-color: green;} */
+
+form h3{
+    background-color: crimson;
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+    padding:7px 0px ;
+}
+
+form input,select{
+    padding: 2px;
+    margin-top: 13px;
+    margin-bottom: 13px;
+    width: 200px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+
 form{
-    background-color: #fff;
-    height: 50vh;
-    width: 50vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: silver;
+    height: 450px;
+    width: 300px;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.hexagonArea .hexagon img{
+    width: 100px;
+}
+
+.hexagonArea{
+    display: flex;
+    margin-bottom: 20px;
+    
+}
+
+.hexagonArea .last{
+    transform:translateY(-45px) ;
+}
+.hexagonArea .hexagon{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+    clip-path: polygon(0 25%,50% 0,100% 25%,100% 75%, 50% 100%, 0 75%);
+    background: crimson;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: .5s;
+
+
+}
+.hexagonArea .hexagon h3{
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 10px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+
+.hexagonArea .hexagon img{
+    width: 20px;
+}
+
+.hexagonArea .hexagon:hover{
+    background: #fff;
+    transform: scale(0.8);
 }

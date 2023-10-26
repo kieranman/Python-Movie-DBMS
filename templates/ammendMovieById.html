@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static', filename='read.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='ammend.css') }}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -18,15 +18,8 @@
                 <img src="{{ url_for('static', filename='confirm-icon.png') }}" alt="">
                 <h3>Confirm</h3>
             </div>
+        </input>
     </div>
-    <form class="search-box" id="movie-form" method="POST" action="/readMovie">
-        <select id="field" name="field">
-            <option value="rating">Rating</option>
-            <option value="yearReleased">Release Year</option>
-            <option value="genre">Genre</option>
-        </select>
-        <input id="data" name="data">
-    </form>
     <div class="container">
         <table>
             <tr>
@@ -37,16 +30,16 @@
                 <th>Duration</th>
                 <th>Genre</th>
             </tr>
-            {% for row in data %}
             <tr>
-                <td>{{ row.id }}</td>
-                <td>{{ row.title }}</td>
-                <td>{{ row.yearReleased }}</td>
-                <td>{{ row.rating }}</td>
-                <td>{{ row.duration }}</td>
-                <td>{{ row.genre }}</td>
+                <form method="POST" action="/ammendMovieById/{{data[0]}}" id="movie-form">
+                    <td><input type="number" name="id" id="id" required value="{{ data[0] }}"></td>
+                    <td><input type="text" name="title" id="title" required value="{{ data[1] }}"></td>
+                    <td><input type="number" name="yearReleased" id="yearReleased" value="{{ data[2] }}" required></td>
+                    <td><input type="text" name="rating" id="rating" value="{{ data[3] }}" required></td>
+                    <td><input type="number" name="duration" id="duration" value="{{ data[4] }}"required></td>
+                    <td><input type="text" name="genre" id="genre" value="{{ data[5] }}" required></td>
+                </form>
             </tr>
-            {% endfor %}
         </table>
     </div>
 
@@ -59,5 +52,7 @@
                 });
         });
     </script>
+
 </body>
+
 </html>
